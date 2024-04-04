@@ -1,0 +1,199 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= ConfigurationManager.AppSettings["Logo"]   %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="<%= ConfigurationManager.AppSettings["Logo"]   %>" />
+    <script src="/assets/Template1/js/vendor.min.js"></script>
+
+    <!-- Bootstrap select pluings -->
+    <link href="/assets/Template1/libs/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+
+    <!-- c3 plugin css -->
+    <link href="/assets/Template1/libs/c3/c3.min.css" rel="stylesheet" />
+    <!-- Sweet Alert-->
+    <link href="/assets/Template1/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <!-- Sweet Alerts js -->
+    <script src="/assets/Template1/libs/sweetalert2/sweetalert2.min.js"></script>
+
+    <link href="/assets/vendor/flatpicker/flatpickr.min.css" rel="stylesheet" />
+
+    <!-- App css -->
+    <link href="/assets/Template1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/Template1/css/icons.min.css" rel="stylesheet" />
+    <link href="/assets/Template1/css/app.min.css" rel="stylesheet" />
+
+    <link href="/assets/vendor/select2-4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server"></form>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <asp:Label ID="lblUserName" Text="name" runat="server" /></a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow m-0" style="cursor: pointer;">Welcome !</h6>
+                        </div>
+                        <a class="dropdown-item notify-item" id="btnLogout" style="cursor: pointer;">
+                            <i class="fe-log-out"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- LOGO -->
+            <div class="logo-box">
+                <a href="index.html" class="logo text-center logo-light">
+                    <span class="logo-lg">
+                        <img src="<%= ConfigurationManager.AppSettings["Logo"]   %>" alt="" height="50" style="margin-right: 66px;">
+
+                        <!-- <span class="logo-lg-text-light">Codefox</span> -->
+                    </span>
+                    <span class="logo-sm">
+                        <!-- <span class="logo-sm-text-light">C</span> -->
+                        <img src="<%= ConfigurationManager.AppSettings["Logo"]   %>" alt="" height="30">
+                    </span>
+                </a>
+                <a href="index.html" class="logo text-center logo-dark">
+                    <span class="logo-lg">
+                        <img src="<%= ConfigurationManager.AppSettings["Logo"]   %>" alt="" height="50">
+                        <!-- <span class="logo-lg-text-dark">Codefox</span> -->
+                    </span>
+                    <span class="logo-sm">
+                        <!-- <span class="logo-sm-text-dark">C</span> -->
+                        <img src="<%= ConfigurationManager.AppSettings["Logo"]   %>" alt="" height="24">
+                    </span>
+                </a>
+            </div>
+
+            <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                <li>
+                    <button class="button-menu-mobile waves-effect waves-light">
+                        <i class="fe-menu"></i>
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+        <!-- end Topbar -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="slimscroll-menu">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Navigation</li>
+                        <li>
+                            <a href="/Dashboard">
+                                <i class="fe-airplay"></i>
+                                <span>Dashboard </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="fe-pie-chart"></i>
+                                <span>Master </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+
+                                <li><a href="/ManageCoach">Coach </a></li>
+                                <li id="candidateMenu"><a href="/Candidate">Candidate</a></li>
+                                <li id="courseMenu"><a href="/ManageCourse">Course</a></li>
+                                <li id="liUser" runat="server"><a href="/ManageUser">
+                                    <asp:Label ID="UserLabel" Text="name" runat="server" /></a></li>
+                                <%--<li><a href="charts-chartist.html">Chartist Charts</a></li>
+                                    <li><a href="charts-chartjs.html">Chartjs Charts</a></li>
+                                    <li><a href="charts-c3.html">C3 Charts</a></li>
+                                    <li><a href="charts-sparkline.html">Sparkline Charts</a></li>
+                                    <li><a href="charts-knob.html">Jquery Knob</a></li>--%>
+                            </ul>
+                        </li>
+                        <%-- <li class="menu-title mt-2">More</li>--%>
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+        </div>
+
+    </div>
+    <div class="content-page ">
+        <div class="content ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">
+                                    <asp:Label ID="Label1" Text="title" runat="server" /></a></li>
+                                <li class="breadcrumb-item active">
+                                    <asp:Label ID="label2" Text="title" runat="server" /></li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">
+                            <asp:Label ID="lblPage1" Text="title" runat="server" /></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <!-- JAVASCRIPT  FILES ========================================= -->
+
+    <!-- Vendor js -->
+
+    <script src="/assets/Template1/libs/bootstrap-select/bootstrap-select.min.js"></script>
+
+
+    <!-- Bootstrap select plugin -->
+
+
+
+
+    <!-- dashboard init -->
+    <script src="/assets/Template1/libs/c3/c3.min.js"></script>
+    <script src="/assets/Template1/libs/d3/d3.min.js"></script>
+
+    <script src="/assets/Template1/js/pages/dashboard.init.js"></script>
+
+
+
+    <!-- App js -->
+    <script src="/assets/Template1/js/app.min.js"></script>
+    <script src="/assets/js/Custom.js"></script>
+    <script src="assets/js/ASPSnippets_Pager.min.js"></script>
+    <script src="/assets/vendor/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/assets/vendor/flatpicker/flatpickr.min.js"></script>
+    <script src="/assets/PageScripts/Master.master.js"></script>
+
+</body>
+</html>
